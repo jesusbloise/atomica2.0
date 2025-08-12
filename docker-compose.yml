@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   app:
     build: .
@@ -6,5 +5,10 @@ services:
       - "3010:3000"
     environment:
       - NODE_ENV=production
+    # volumen nombrado para evitar problemas de permisos
+    volumes:
+      - uploads_data:/app/uploads
     restart: unless-stopped
 
+volumes:
+  uploads_data:
