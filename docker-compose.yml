@@ -2,10 +2,9 @@ services:
   app:
     build: .
     ports:
-      - "3010:3000"
+      - "3010:3000"   # <-- publica 3000 del contenedor en el 3010 del host
     environment:
       - NODE_ENV=production
-    # volumen nombrado para evitar problemas de permisos
     volumes:
       - uploads_data:/app/uploads
     restart: unless-stopped
